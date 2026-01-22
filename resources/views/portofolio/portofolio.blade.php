@@ -1,3 +1,5 @@
+
+
 @extends('layouts.main')
 
 @section('title', 'Happy Holiday')
@@ -29,11 +31,9 @@
     <div class="container">
         <h2>Skills</h2>
         <div class="skills">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>Laravel</span>
-            <span>MySQL</span>
+        @foreach($skills as $skill)
+            <span>{{ $skill }}</span>
+        @endforeach
         </div>
     </div>
 </section>
@@ -43,21 +43,16 @@
     <div class="container">
         <h2>Projects</h2>
         <div class="projects">
-            <div class="card">
-                <h3>Project 1</h3>
-                <p>Aplikasi CRUD Laravel</p>
-            </div>
-            <div class="card">
-                <h3>Project 2</h3>
-                <p>Website Company Profile</p>
-            </div>
-            <div class="card">
-                <h3>Project 3</h3>
-                <p>Sistem Login & Register</p>
-            </div>
+            @foreach($projects as $project)
+                <div class="card">
+                    <h3>{{ $project['name'] }}</h3>
+                    <p>{{ $project['description'] }}</p>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>
+
 
 <!-- CONTACT -->
 <section id="contact" class="section gray">

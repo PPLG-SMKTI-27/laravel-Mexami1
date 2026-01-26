@@ -1,0 +1,88 @@
+/* Reset semua properti agar style.css global tidak merusak layout */
+body, .main-content, .login-card, .login-card h2, .login-card .form-control, .login-card .btn, footer {
+    all: unset;
+}
+
+/* Body dan wrapper */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+/* Konten utama login */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card Login */
+.login-card {
+    all: unset; /* reset properti warisan */
+    width: 100%;
+    max-width: 420px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Judul */
+.login-card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* Input */
+.login-card .form-control {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 15px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button */
+.login-card .btn {
+    width: 100%;
+    height: 45px;
+    background-color: #009999;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Alert */
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}
+    

@@ -12,25 +12,54 @@
 </head>
 <body>
 
-<nav class="navbar">
+
+<nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-        <h2 class="logo">Bloxstrap</h2>
-        <ul class="menu">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="/login" style="font-weight: bold; color: #009999;">Login</a></li>
-        </ul>
+        <a class="navbar-brand fw-bold" href="#">
+            {{ config('app.name', 'Laravel App') }}
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Menu Tengah -->
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#project">Project</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+
+            <!-- Auth Button -->
+            <div>
+                @auth
+                    <a href="{{ url('/dashboard') }}" class="btn btn-purple">Dashboard</a>
+                @else
+                    <a href="{{ route('login') }}" class="btn btn-outline-purple me-2">Login</a>
+                    <a href="{{ route('register') }}" class="btn btn-purple">Sign Up</a>
+                @endauth
+            </div>
+        </div>
     </div>
 </nav>
+
 
 <div class="main-content">
     @yield('content')
 </div>
 
-<footer class="footer">
-    <p>© {{ date('Y') }} Bloxstrap. All Rights Reserved.</p>
+<footer>
+    © {{ date('Y') }} {{ config('app.name') }}. All rights reserved.
 </footer>
 
 </body>
